@@ -20,6 +20,8 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Center(child: Text('Class Details')),
           actions: [
             ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.pinkAccent),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => MyHome()));
@@ -38,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         OutlinedButton.icon(
                             onPressed: () {
-                              login();
+                              loaddata();
                             },
                             icon: Icon(
                               Icons.login,
@@ -62,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //Create Function to call POST API
-  Future<void> login() async {
+  Future<void> loaddata() async {
     var response = await http.post(
         Uri.parse(
             "https://llabdemo.orell.com/api/masters/anonymous/getAllClassList"),

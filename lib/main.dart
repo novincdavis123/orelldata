@@ -20,6 +20,8 @@ class Home extends StatelessWidget {
             title: Center(child: Text('Academic year Details')),
             actions: [
               ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.lightGreen),
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => MyHomePage()));

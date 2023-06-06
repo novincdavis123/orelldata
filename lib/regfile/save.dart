@@ -88,7 +88,7 @@ class _MyHomeState extends State<MyHome> {
                 Center(
                   child: OutlinedButton.icon(
                       onPressed: () {
-                        login();
+                        register();
                       },
                       icon: Icon(
                         Icons.login,
@@ -105,7 +105,7 @@ class _MyHomeState extends State<MyHome> {
   }
 
   //Create Function to call POST API
-  Future<void> login() async {
+  Future<void> register() async {
     if (passController.text.isNotEmpty && emailController.text.isNotEmpty) {
       var response = await http.post(
           Uri.parse(
