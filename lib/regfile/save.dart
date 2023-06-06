@@ -144,7 +144,11 @@ class _MyHomeState extends State<MyHome> {
          addressController.clear();
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text('Success')));
-      } else {
+      }else if(response.statusCode == 400){
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text('User already exists')));
+      }
+      else {
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text('Invalid Credentials')));
       }
